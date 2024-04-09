@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
 
-function App() {
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from "./Pages/Home";
+import Login from './Pages/Login';
+import Register from './Pages/Register';
+import DashBoard from './Pages/DashBoard';
+
+
+// Assuming you have a Login component
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+   <div>
+<BrowserRouter>
+<Routes>
+<Route index element={<Home />} />
+<Route path='/home' element={<Home />} />
+<Route path='/log' element={<Login />} />
+<Route path='/Reg' element={<Register />} />
+<Route path='/Board' element={<DashBoard />} />
+</Routes>
+</BrowserRouter>
+</div>
+   </>
   );
 }
 
